@@ -76,7 +76,7 @@ npm start
 Open [http://localhost:3016](http://localhost:3016) - done!
 
 > **Note:**
-> Edit `.env` for server settings and `public/js/config.js` to customize the UI (buttons, options, simulcast, SFU tuning). If `public/js/config.js` is missing, `public/js/config.template.js` is served instead.
+> Edit `.env` for server settings and `public/js/config.js` to customize the UI (buttons, options, MiroTalk app switcher, simulcast, SFU tuning). If `public/js/config.js` is missing, `public/js/config.template.js` is served instead.
 
 </details>
 

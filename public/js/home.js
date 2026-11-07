@@ -36,6 +36,7 @@ const broadcaster = document.getElementById('broadcaster');
 const viewerLabel = document.getElementById('viewerLabel');
 const viewer = document.getElementById('viewer');
 const mode = document.getElementById('mode');
+const appSwitcher = document.getElementById('appSwitcher');
 
 appName.textContent = homePage.appName;
 copyrightText.textContent = `© ${new Date().getFullYear()} ${homePage.appName}`;
@@ -282,6 +283,18 @@ function isFieldsOk() {
 
 !homePage.showCopyright && elementDisplay(copyright, false);
 !homePage.about.show && elementDisplay(aboutDiv, false);
+applyAppSwitcherConfig();
+
+function applyAppSwitcherConfig() {
+    const { show, domain, apps, urls, docsUrl } = homePage.appSwitcher || {};
+    appSwitcher.hidden = show !== true;
+    if (show !== true) return;
+    if (typeof domain === 'string' && domain.trim()) appSwitcher.setAttribute('domain', domain.trim());
+    const appList = Array.isArray(apps) ? apps.join(',') : apps;
+    if (typeof appList === 'string' && appList.trim()) appSwitcher.setAttribute('apps', appList);
+    if (urls && typeof urls === 'object') appSwitcher.setAttribute('urls', JSON.stringify(urls));
+    if (typeof docsUrl === 'string') appSwitcher.setAttribute('docs-url', docsUrl.trim());
+}
 
 if (!homePage.buttons.broadcast) {
     elementDisplay(broadcasterLabel, false);

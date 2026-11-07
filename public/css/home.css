@@ -189,6 +189,22 @@
     box-shadow: none;
 }
 
+/* Match the app switcher to the page theme and the other topbar buttons */
+#appSwitcher {
+    --landing-surface: var(--surface-color);
+    --landing-text: var(--text-color);
+    --landing-text-muted: var(--text-secondary);
+    --landing-primary: var(--accent-color);
+    --landing-accent: var(--accent-color);
+    --landing-border: rgba(128, 128, 128, 0.25);
+    --landing-hover: var(--surface-hover);
+    --landing-tint: var(--accent-soft);
+    --landing-trigger-size: 38px;
+    --landing-trigger-bg: var(--surface-color);
+    --landing-trigger-border: rgba(128, 128, 128, 0.25);
+    --landing-trigger-radius: var(--border-radius);
+}
+
 .panel-actions button:hover {
     color: var(--home-accent);
     background: var(--surface-hover);
